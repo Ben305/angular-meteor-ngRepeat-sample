@@ -1,0 +1,18 @@
+<h1>Angular-Meteor (<a href="/angularList">Angular implementation</a>)</h1>
+<p>Limit: {{vm.limit}}</p>
+
+<div>
+    <button ng-click="vm.increaseLimit()">Load more</button>
+    <button ng-click="vm.resetLimit()">Reset</button>
+</div>
+
+<div>
+    <ul>
+        <li ng-repeat="item in vm.items track by item.number">
+            <div log-rendering="item.number" class="item">
+                {{item.name}} (Number: {{item.number}})
+                <p>{{item.description}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,19 @@
+<h1>Anguluar only (<a href="/">Angular-meteor implementation</a>)</h1>
+<p>Limit: {{vm.limit}}</p>
+
+<div>
+    <button ng-click="vm.increaseLimit()">Load more</button>
+    <button ng-click="vm.resetLimit()">Reset</button>
+    <!--<input type="range" min="1" max="50" value="1" ng-model="vm.limit"/>-->
+</div>
+
+<div>
+    <ul>
+        <li ng-repeat="item in vm.items | limitTo:vm.limit track by item.number">
+            <div log-rendering="item.number" class="item">
+                {{item.name}} (Number: {{item.number}})
+                <p>{{item.description}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
